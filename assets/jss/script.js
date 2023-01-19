@@ -26,6 +26,11 @@ for (let i = 0; i < hours.length; i++) {
     let dayPlan = $('<div>')
     dayPlan.addClass('textarea col-10')
     listItem.append(dayPlan)
+    // creating save button and appending to list item
+    let saveBtn = $('<button>')
+    saveBtn.addClass('saveBtn col-1')
+    saveBtn.text('Save')
+    listItem.append(saveBtn)
     for (let j = 0; j < hours.length; j++) {
         list.append(listItem)
     }
