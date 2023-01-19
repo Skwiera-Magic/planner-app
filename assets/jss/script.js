@@ -20,6 +20,7 @@ for (let i = 0; i < hours.length; i++) {
     // creating hour block and appending to list item
     let hour = $('<div>')
     hour.addClass('hour col-1')
+    hour.attr('id', hours[i])
     hour.text(hours[i])
     listItem.append(hour)
     // creating day plan area and appending to list item
@@ -29,9 +30,16 @@ for (let i = 0; i < hours.length; i++) {
     // creating save button and appending to list item
     let saveBtn = $('<button>')
     saveBtn.addClass('saveBtn col-1')
-    saveBtn.text('Save')
+    // creating save i and appending to save button
+    let save = $('<i>')
+    save.text('Save')
+    saveBtn.append(save)
     listItem.append(saveBtn)
     for (let j = 0; j < hours.length; j++) {
         list.append(listItem)
     }
 }
+
+// checking what color should the blocks be
+var currentHour = moment().hour();
+log(currentHour)
