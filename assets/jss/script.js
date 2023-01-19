@@ -11,16 +11,16 @@ let hours = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:0
     let container = $('.container')
     let list = $('<ul>')
     container.append(list)
+
+// for loop going through hours array and appending list item to list for each
 for (let i = 0; i < hours.length; i++) {
     let listItem = $('<li>')
-    listItem.text(hours[i])
-    listItem.attr('class', 'row')
-    let hourBlock = $('<span>')
-    hourBlock.attr('class', 'time-block')
-    hourBlock.css('background-color', 'blue')
-    listItem.append(hourBlock)
-    // todo: i'm not sure why this loop is here and why it's not working without it??
-    for (let i = 0; i < 10; i++) {
-        list.append(listItem[i])
+    listItem.addClass('row time-block')
+    let hour = $('<div>')
+    hour.addClass('hour col-1')
+    hour.text(hours[i])
+    listItem.append(hour)
+    for (let j = 0; j < hours.length; j++) {
+        list.append(listItem)
     }
 }
