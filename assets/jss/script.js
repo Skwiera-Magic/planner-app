@@ -1,6 +1,11 @@
 let log = console.log.bind(document)
+
+// setting date and time on top of the planner
+$("#currentDay").text(moment().format("h:mm:ssa, dddd, Do MMM YYYY"))
+
+
+// rendering list of hour blocks
 let container = $('.container')
-log(container)
 let list = $('<ul>')
 container.append(list)
 let listItem = $('<li>')
