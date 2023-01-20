@@ -21,6 +21,7 @@ for (let i = 0; i < hours.length; i++) {
     listItem.addClass('row time-block')
     // creating hour block and appending to list item
     let hour = $('<div>')
+    hour.attr('id', hours[i])
     hour.addClass('hour col-1')
     hour.text(hours[i]+':00')
     listItem.append(hour)
@@ -129,6 +130,17 @@ if (currentHour > 16) {
 
 
 // setting up event listener and saving input to local storage
+
 $('.saveBtn').on('click', function (event) {
-    log(event.target)
+    log($(event.target).siblings('textarea').val())
+    log($(event.target).siblings('div').attr('id'))
+    
+    localStorage.setItem('9', $('.9').val())
+    // log($('.9').val())
+    // log($('.10').val())
+    // log($('.11').val())
+    // log($('.12').val())
+    // log($('.13').val())
 })
+
+localStorage.getItem('9')
