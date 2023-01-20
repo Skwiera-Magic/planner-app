@@ -45,7 +45,6 @@ for (let i = 0; i < hours.length; i++) {
 
 // checking what color should the blocks be
 var currentHour = moment().hour();
-log(currentHour)
 if (currentHour < 9) {    
     $('.description').addClass('future')
 }
@@ -130,19 +129,14 @@ if (currentHour > 16) {
 
 
 // setting up event listener and saving input to local storage
-
 $('.saveBtn').on('click', function (event) {
-    log($(event.target).siblings('textarea').val())
-    log($(event.target).siblings('div').attr('id'))
     let text = $(event.target).siblings('textarea').val()
     let time = $(event.target).siblings('div').attr('id')
-    log(time, text)
     localStorage.setItem(time, text)
-    // log($('.9').val())
-    // log($('.10').val())
-    // log($('.11').val())
-    // log($('.12').val())
-    // log($('.13').val())
+})
+
+$('i').on('click', function () {
+    $('.saveBtn').click();
 })
 
 $('.9').val(localStorage.getItem('9'))
