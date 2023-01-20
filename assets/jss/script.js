@@ -147,3 +147,12 @@ $('.13').val(localStorage.getItem('13'))
 $('.14').val(localStorage.getItem('14'))
 $('.15').val(localStorage.getItem('15'))
 $('.16').val(localStorage.getItem('16'))
+
+
+let clearSpace = $('<div>')
+clearSpace.addClass('col-12 text-center')
+$('.container').append(clearSpace)
+let clearButton = $('<button>')
+clearButton.addClass('btn btn-primary')
+clearButton.text('Clear Schedule')
+clearSpace.append(clearButton)
