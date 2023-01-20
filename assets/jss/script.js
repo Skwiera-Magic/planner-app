@@ -1,16 +1,18 @@
 let log = console.log.bind(document)
 
 // setting date and time on top of the planner
+setInterval(function () {
 $("#currentDay").text(moment().format("h:mm:ssa, dddd, Do MMM YYYY"))
+}, 1000);
 
 
 // array of buisness hours
 let hours = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"]
 
 // rendering list of hour blocks
-    let container = $('.container')
-    let list = $('<ul>')
-    container.append(list)
+let container = $('.container')
+let list = $('<ul>')
+container.append(list)
 
 // for loop going through hours array and appending list item to list for each
 for (let i = 0; i < hours.length; i++) {
@@ -25,7 +27,7 @@ for (let i = 0; i < hours.length; i++) {
     listItem.append(hour)
     // creating day plan area and appending to list item
     let dayPlan = $('<textarea>')
-    dayPlan.addClass('hour col-10')
+    dayPlan.addClass('description col-10')
     listItem.append(dayPlan)
     // creating save button and appending to list item
     let saveBtn = $('<button>')
@@ -43,3 +45,11 @@ for (let i = 0; i < hours.length; i++) {
 // checking what color should the blocks be
 var currentHour = moment().hour();
 log(currentHour)
+log($('.hour'))
+
+
+
+// setting up event listener and saving input to local storage
+$('.saveBtn').on('click', function (event) {
+    log(event.target)
+})
