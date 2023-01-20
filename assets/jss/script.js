@@ -134,8 +134,10 @@ if (currentHour > 16) {
 $('.saveBtn').on('click', function (event) {
     log($(event.target).siblings('textarea').val())
     log($(event.target).siblings('div').attr('id'))
-    
-    localStorage.setItem('9', $('.9').val())
+    let text = $(event.target).siblings('textarea').val()
+    let time = $(event.target).siblings('div').attr('id')
+    log(time, text)
+    localStorage.setItem(time, text)
     // log($('.9').val())
     // log($('.10').val())
     // log($('.11').val())
@@ -143,4 +145,11 @@ $('.saveBtn').on('click', function (event) {
     // log($('.13').val())
 })
 
-localStorage.getItem('9')
+$('.9').val(localStorage.getItem('9'))
+$('.10').val(localStorage.getItem('10'))
+$('.11').val(localStorage.getItem('11'))
+$('.12').val(localStorage.getItem('12'))
+$('.13').val(localStorage.getItem('13'))
+$('.14').val(localStorage.getItem('14'))
+$('.15').val(localStorage.getItem('15'))
+$('.16').val(localStorage.getItem('16'))
