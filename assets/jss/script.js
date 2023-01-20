@@ -7,7 +7,7 @@ $("#currentDay").text(moment().format("h:mm:ssa, dddd, Do MMM YYYY"))
 
 
 // array of buisness hours
-let hours = ["9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"]
+let hours = ["9", "10", "11", "12", "13", "14", "15", "16"]
 
 // rendering list of hour blocks
 let container = $('.container')
@@ -22,13 +22,13 @@ for (let i = 0; i < hours.length; i++) {
     // creating hour block and appending to list item
     let hour = $('<div>')
     hour.addClass('hour col-1')
-    hour.attr('id', hours[i])
-    hour.text(hours[i])
+    hour.text(hours[i]+':00')
     listItem.append(hour)
     // creating day plan area and appending to list item
-    let dayPlan = $('<textarea>')
-    dayPlan.addClass('description col-10')
-    listItem.append(dayPlan)
+    let textArea = $('<textarea>')
+    textArea.attr('class', hours[i])
+    textArea.addClass('description col-10')
+    listItem.append(textArea)
     // creating save button and appending to list item
     let saveBtn = $('<button>')
     saveBtn.addClass('saveBtn col-1')
@@ -45,8 +45,87 @@ for (let i = 0; i < hours.length; i++) {
 // checking what color should the blocks be
 var currentHour = moment().hour();
 log(currentHour)
-log($('.hour'))
+if (currentHour < 9) {    
+    $('.description').addClass('future')
+}
 
+if (currentHour == 9) {
+    $('.description').addClass('future')
+    $('.9').removeClass('future')
+    $('.9').addClass('present')
+}
+
+if (currentHour == 10) {
+    $('.description').addClass('future')
+    $('.9').removeClass('future')
+    $('.9').addClass('past')
+    $('.10').removeClass('future')
+    $('.10').addClass('present')
+}
+
+if (currentHour == 11) {
+    $('.description').addClass('future')
+    $('.9').removeClass('future')
+    $('.9').addClass('past')
+    $('.10').removeClass('future')
+    $('.10').addClass('past')
+    $('.11').removeClass('future')
+    $('.11').addClass('present')
+}
+
+if (currentHour == 12) {
+    $('.description').addClass('future')
+    $('.9').removeClass('future')
+    $('.9').addClass('past')
+    $('.10').removeClass('future')
+    $('.10').addClass('past')
+    $('.11').removeClass('future')
+    $('.11').addClass('past')
+    $('.12').removeClass('future')
+    $('.12').addClass('present')
+}
+
+if (currentHour == 13) {
+    $('.description').addClass('future')
+    $('.9').removeClass('future')
+    $('.9').addClass('past')
+    $('.10').removeClass('future')
+    $('.10').addClass('past')
+    $('.11').removeClass('future')
+    $('.11').addClass('past')
+    $('.12').removeClass('future')
+    $('.12').addClass('past')
+    $('.13').removeClass('future')
+    $('.13').addClass('present')
+}
+
+if (currentHour == 14) {
+    $('.description').addClass('past')
+    $('.14').removeClass('past')
+    $('.14').addClass('present')
+    $('.15').removeClass('past')
+    $('.15').addClass('future')
+    $('.16').removeClass('past')
+    $('.16').addClass('future')
+}
+
+if (currentHour == 15) {
+    $('.description').addClass('past')
+    $('.15').removeClass('past')
+    $('.15').addClass('present')
+    $('.16').removeClass('past')
+    $('.16').addClass('future')
+}
+
+if (currentHour == 16) {
+    $('.description').addClass('past')
+    $('.16').removeClass('past')
+    $('.16').addClass('present')
+}
+
+if (currentHour > 16) {
+    $('.description').addClass('past')
+}
 
 
 // setting up event listener and saving input to local storage
