@@ -33,9 +33,11 @@ for (let i = 0; i < hours.length; i++) {
     // creating save button and appending to list item
     let saveBtn = $('<button>')
     saveBtn.addClass('saveBtn col-1')
+    saveBtn.attr('title', 'Save your schedule to local storage')
     // creating save i and appending to save button
     let save = $('<i>')
     save.addClass('far fa-save')
+    save.attr('title', 'Save your schedule to local storage')
     saveBtn.append(save)
     listItem.append(saveBtn)
     for (let j = 0; j < hours.length; j++) {
@@ -159,6 +161,7 @@ $('.container').append(clearSpace)
 let clearButton = $('<button>')
 clearButton.addClass('btn btn-primary')
 clearButton.text('Clear Schedule')
+clearButton.attr('title', 'This will clear whole local storage, not just schedule, use with care')
 clearSpace.append(clearButton)
 
 clearButton.on('click', function () {
