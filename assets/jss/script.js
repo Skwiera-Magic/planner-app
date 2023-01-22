@@ -35,7 +35,7 @@ for (let i = 0; i < hours.length; i++) {
     saveBtn.addClass('saveBtn col-1')
     // creating save i and appending to save button
     let save = $('<i>')
-    save.text('Save')
+    save.addClass('far fa-save')
     saveBtn.append(save)
     listItem.append(saveBtn)
     for (let j = 0; j < hours.length; j++) {
