@@ -88,16 +88,13 @@ if (currentHour == 12) {
 }
 
 if (currentHour == 13) {
-    $('.description').addClass('future')
-    $('.9').removeClass('future')
-    $('.9').addClass('past')
-    $('.10').removeClass('future')
-    $('.10').addClass('past')
-    $('.11').removeClass('future')
-    $('.11').addClass('past')
-    $('.12').removeClass('future')
-    $('.12').addClass('past')
-    $('.13').removeClass('future')
+    $('.description').addClass('past')
+    $('.14').removeClass('past')
+    $('.14').addClass('future')
+    $('.15').removeClass('past')
+    $('.15').addClass('future')
+    $('.16').removeClass('past')
+    $('.16').addClass('future')
     $('.13').addClass('present')
 }
 
