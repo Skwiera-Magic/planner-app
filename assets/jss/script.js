@@ -40,9 +40,7 @@ for (let i = 0; i < hours.length; i++) {
     save.attr('title', 'Save your schedule to local storage')
     saveBtn.append(save)
     listItem.append(saveBtn)
-    for (let j = 0; j < hours.length; j++) {
-        list.append(listItem)
-    }
+    list.append(listItem)
 }
 
 // checking what color should the blocks be

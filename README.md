@@ -11,12 +11,12 @@
 ### The challenge
 
 * Here's day planner for you to use and enjoy :)
-* While creating it I have learned how to use jquery to make work way easier.
+* While creating it I have learned how to use jquery, moment.js and how website can be built with no html input.
 * Few things could probably be done better (I'm looking at you colors!), and I will work on it in free time.
 
 ### Screenshot
 
-* ![Screenshot of the deployed day planner](./assets/images/screenshot-planner.png)
+![Screenshot of the deployed day planner](./assets/images/screenshot-planner.png)
 
 ### Links
 
