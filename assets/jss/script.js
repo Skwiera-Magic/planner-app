@@ -2,7 +2,7 @@ let log = console.log.bind(document)
 
 // setting date and time on top of the planner
 setInterval(function () {
-$("#currentDay").text(moment().format("h:mm:ssa, dddd, Do MMM YYYY"))
+    $("#currentDay").text(moment().format("h:mm:ssa, dddd, Do MMM YYYY"))
 }, 1000);
 
 
@@ -23,7 +23,7 @@ for (let i = 0; i < hours.length; i++) {
     let hour = $('<div>')
     hour.attr('id', hours[i])
     hour.addClass('hour col-1')
-    hour.text(hours[i]+':00')
+    hour.text(hours[i] + ':00')
     listItem.append(hour)
     // creating day plan area and appending to list item
     let textArea = $('<textarea>')
@@ -33,19 +33,19 @@ for (let i = 0; i < hours.length; i++) {
     // creating save button and appending to list item
     let saveBtn = $('<button>')
     saveBtn.addClass('saveBtn col-1')
+    saveBtn.attr('title', 'Save your schedule to local storage')
     // creating save i and appending to save button
     let save = $('<i>')
-    save.text('Save')
+    save.addClass('far fa-save')
+    save.attr('title', 'Save your schedule to local storage')
     saveBtn.append(save)
     listItem.append(saveBtn)
-    for (let j = 0; j < hours.length; j++) {
-        list.append(listItem)
-    }
+    list.append(listItem)
 }
 
 // checking what color should the blocks be
 var currentHour = moment().hour();
-if (currentHour < 9) {    
+if (currentHour < 9) {
     $('.description').addClass('future')
 }
 
@@ -86,16 +86,13 @@ if (currentHour == 12) {
 }
 
 if (currentHour == 13) {
-    $('.description').addClass('future')
-    $('.9').removeClass('future')
-    $('.9').addClass('past')
-    $('.10').removeClass('future')
-    $('.10').addClass('past')
-    $('.11').removeClass('future')
-    $('.11').addClass('past')
-    $('.12').removeClass('future')
-    $('.12').addClass('past')
-    $('.13').removeClass('future')
+    $('.description').addClass('past')
+    $('.14').removeClass('past')
+    $('.14').addClass('future')
+    $('.15').removeClass('past')
+    $('.15').addClass('future')
+    $('.16').removeClass('past')
+    $('.16').addClass('future')
     $('.13').addClass('present')
 }
 
@@ -139,11 +136,30 @@ $('i').on('click', function () {
     $('.saveBtn').click();
 })
 
-$('.9').val(localStorage.getItem('9'))
-$('.10').val(localStorage.getItem('10'))
-$('.11').val(localStorage.getItem('11'))
-$('.12').val(localStorage.getItem('12'))
-$('.13').val(localStorage.getItem('13'))
-$('.14').val(localStorage.getItem('14'))
-$('.15').val(localStorage.getItem('15'))
-$('.16').val(localStorage.getItem('16'))
+function getStorage() {
+    $('.9').val(localStorage.getItem('9'))
+    $('.10').val(localStorage.getItem('10'))
+    $('.11').val(localStorage.getItem('11'))
+    $('.12').val(localStorage.getItem('12'))
+    $('.13').val(localStorage.getItem('13'))
+    $('.14').val(localStorage.getItem('14'))
+    $('.15').val(localStorage.getItem('15'))
+    $('.16').val(localStorage.getItem('16'))
+}
+
+getStorage();
+
+
+let clearSpace = $('<div>')
+clearSpace.addClass('col-12 text-center')
+$('.container').append(clearSpace)
+let clearButton = $('<button>')
+clearButton.addClass('btn btn-primary')
+clearButton.text('Clear Schedule')
+clearButton.attr('title', 'This will clear whole local storage, not just schedule, use with care')
+clearSpace.append(clearButton)
+
+clearButton.on('click', function () {
+    localStorage.clear();
+    getStorage();
+})
