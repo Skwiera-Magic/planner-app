@@ -132,8 +132,8 @@ $('.saveBtn').on('click', function (event) {
     localStorage.setItem(time, text)
 })
 
-$('i').on('click', function () {
-    $('.saveBtn').click();
+$('i').on('click', function (event) {
+    $(event.target).parent('button').click();
 })
 
 function getStorage() {
