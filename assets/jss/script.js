@@ -18,7 +18,6 @@ container.append(list)
 var currentHour = moment().hour();
 // for loop going through hours array and appending list item to list for each
 for (let i = 0; i < hours.length; i++) {
-    log(currentHour, hours[i])
     //creating list item
     let listItem = $('<li>')
     listItem.addClass('row time-block')
@@ -52,15 +51,6 @@ for (let i = 0; i < hours.length; i++) {
     saveBtn.append(save)
     listItem.append(saveBtn)
     list.append(listItem)
-}
-
-// checking what color should the blocks be
-
-var timeIndex = $('.hour').attr('id')
-log(timeIndex)
-for (let j = 0; j < array.length; j++) {
-    const element = array[j];
-    
 }
 
 // setting up event listener and saving input to local storage
