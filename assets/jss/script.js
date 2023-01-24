@@ -32,7 +32,7 @@ for (let i = 0; i < hours.length; i++) {
     let textArea = $('<textarea>')
     textArea.attr('class', hours[i])
     textArea.addClass('description col-10')
-    // coloring blocks
+    // coloring hour blocks
     if (currentHour == hours[i]) {
         textArea.addClass('present')
     }
@@ -62,85 +62,6 @@ for (let j = 0; j < array.length; j++) {
     const element = array[j];
     
 }
-// if (currentHour < 9) {
-//     $('.description').addClass('future')
-// }
-
-// if (currentHour == 9) {
-//     $('.description').addClass('future')
-//     $('.9').removeClass('future')
-//     $('.9').addClass('present')
-// }
-
-// if (currentHour == 10) {
-//     $('.description').addClass('future')
-//     $('.9').removeClass('future')
-//     $('.9').addClass('past')
-//     $('.10').removeClass('future')
-//     $('.10').addClass('present')
-// }
-
-// if (currentHour == 11) {
-//     $('.description').addClass('future')
-//     $('.9').removeClass('future')
-//     $('.9').addClass('past')
-//     $('.10').removeClass('future')
-//     $('.10').addClass('past')
-//     $('.11').removeClass('future')
-//     $('.11').addClass('present')
-// }
-
-// if (currentHour == 12) {
-//     $('.description').addClass('future')
-//     $('.9').removeClass('future')
-//     $('.9').addClass('past')
-//     $('.10').removeClass('future')
-//     $('.10').addClass('past')
-//     $('.11').removeClass('future')
-//     $('.11').addClass('past')
-//     $('.12').removeClass('future')
-//     $('.12').addClass('present')
-// }
-
-// if (currentHour == 13) {
-//     $('.description').addClass('past')
-//     $('.14').removeClass('past')
-//     $('.14').addClass('future')
-//     $('.15').removeClass('past')
-//     $('.15').addClass('future')
-//     $('.16').removeClass('past')
-//     $('.16').addClass('future')
-//     $('.13').addClass('present')
-// }
-
-// if (currentHour == 14) {
-//     $('.description').addClass('past')
-//     $('.14').removeClass('past')
-//     $('.14').addClass('present')
-//     $('.15').removeClass('past')
-//     $('.15').addClass('future')
-//     $('.16').removeClass('past')
-//     $('.16').addClass('future')
-// }
-
-// if (currentHour == 15) {
-//     $('.description').addClass('past')
-//     $('.15').removeClass('past')
-//     $('.15').addClass('present')
-//     $('.16').removeClass('past')
-//     $('.16').addClass('future')
-// }
-
-// if (currentHour == 16) {
-//     $('.description').addClass('past')
-//     $('.16').removeClass('past')
-//     $('.16').addClass('present')
-// }
-
-// if (currentHour > 16) {
-//     $('.description').addClass('past')
-// }
-
 
 // setting up event listener and saving input to local storage
 $('.saveBtn').on('click', function (event) {
